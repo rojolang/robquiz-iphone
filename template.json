@@ -1,0 +1,367 @@
+{
+  "exportFormatVersion": 2,
+  "containerVersion": {
+    "path": "accounts/6247372366/containers/194137702/versions/0",
+    "accountId": "6247372366",
+    "containerId": "194137702",
+    "containerVersionId": "0",
+    "container": {
+      "path": "accounts/6247372366/containers/194137702",
+      "accountId": "6247372366",
+      "containerId": "194137702",
+      "name": "CTM Setup",
+      "publicId": "GTM-TZTF7T2R",
+      "usageContext": [
+        "WEB"
+      ],
+      "fingerprint": "1234567890",
+      "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6247372366/containers/194137702/workspaces?apiLink=container"
+    },
+    "tag": [
+      {
+        "accountId": "6247372366",
+        "containerId": "194137702",
+        "tagId": "1",
+        "name": "CTM Script",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script async src=\"//516526.tctm.xyz/t.js\"></script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "fingerprint": "1234567890",
+        "firingTriggerId": [
+          "2147479553"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        }
+      },
+      {
+        "accountId": "6247372366",
+        "containerId": "194137702",
+        "tagId": "2",
+        "name": "Lead (Call Start)",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\nvar xhr = new XMLHttpRequest();\nvar kkclid = {{URL Parameter - kkclid}};\nvar url = 'https://api.public.kowboykit.com/events/lead/?programid=3785&apikey=904d036f07bf5bd01527c9262ab1e493&clickid=' + encodeURIComponent(kkclid) + '&nofire=1';\nxhr.open('GET', url, true);\nxhr.send();\n\n// Facebook Pixel Event\nfbq('track', 'Lead');\n</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "fingerprint": "1234567890",
+        "firingTriggerId": [
+          "3"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        }
+      },
+      {
+        "accountId": "6247372366",
+        "containerId": "194137702",
+        "tagId": "3",
+        "name": "Add to Cart (Call Answer)",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\nvar xhr = new XMLHttpRequest();\nvar kkclid = {{URL Parameter - kkclid}};\nvar url = 'https://api.public.kowboykit.com/events/add_to_cart/?programid=3785&apikey=904d036f07bf5bd01527c9262ab1e493&clickid=' + encodeURIComponent(kkclid) + '&nofire=1';\nxhr.open('GET', url, true);\nxhr.send();\n\n// Facebook Pixel Event\nfbq('track', 'AddToCart');\n</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "fingerprint": "1234567890",
+        "firingTriggerId": [
+          "4"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        }
+      },
+      {
+        "accountId": "6247372366",
+        "containerId": "194137702",
+        "tagId": "4",
+        "name": "Purchase $18 (15 Seconds Call)",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\nvar xhr = new XMLHttpRequest();\nvar kkclid = {{URL Parameter - kkclid}};\nvar url = 'https://api.public.kowboykit.com/events/purchase/?programid=3785&apikey=904d036f07bf5bd01527c9262ab1e493&clickid=' + encodeURIComponent(kkclid) + '&nofire=1&price=18';\nxhr.open('GET', url, true);\nxhr.send();\n\n// Facebook Pixel Event\nfbq('track', 'Purchase', {value: 18, currency: 'USD'});\n</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "fingerprint": "1234567890",
+        "firingTriggerId": [
+          "5"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        }
+      },
+      {
+        "accountId": "6247372366",
+        "containerId": "194137702",
+        "tagId": "5",
+        "name": "Purchase $60 (40 Seconds Call)",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\nvar xhr = new XMLHttpRequest();\nvar kkclid = {{URL Parameter - kkclid}};\nvar url = 'https://api.public.kowboykit.com/events/purchase/?programid=3785&apikey=904d036f07bf5bd01527c9262ab1e493&clickid=' + encodeURIComponent(kkclid) + '&nofire=1&price=60';\nxhr.open('GET', url, true);\nxhr.send();\n\n// Facebook Pixel Event\nfbq('track', 'Purchase', {value: 60, currency: 'USD'});\n</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "fingerprint": "1234567890",
+        "firingTriggerId": [
+          "6"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "monitoringMetadata": {
+          "type": "MAP"
+        }
+      },
+      {
+        "accountId": "6247372366",
+        "containerId": "194137702",
+        "tagId": "6",
+        "name": "Google Analytics 4 Configuration",
+        "type": "gaawc",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "G-TM28XQJWFW"
+          }
+        ],
+        "fingerprint": "1234567890",
+        "firingTriggerId": [
+          "2147479553"
+        ],
+        "tagFiringOption": "ONCE_PER_LOAD",
+        "monitoringMetadata": {
+          "type": "MAP"
+        }
+      },
+      {
+        "accountId": "6247372366",
+        "containerId": "194137702",
+        "tagId": "7",
+        "name": "Facebook Pixel - Base Code",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\n!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;\nn.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,\ndocument,'script','https://connect.facebook.net/en_US/fbevents.js');\n\nfbq('init', '768195892040623');\nfbq('track', 'PageView');\n</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "fingerprint": "1234567890",
+        "firingTriggerId": [
+          "2147479553"
+        ],
+        "tagFiringOption": "ONCE_PER_LOAD",
+        "monitoringMetadata": {
+          "type": "MAP"
+        }
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "6247372366",
+        "containerId": "194137702",
+        "triggerId": "3",
+        "name": "CTM Call Start",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "ctm.call.start"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1234567890"
+      },
+      {
+        "accountId": "6247372366",
+        "containerId": "194137702",
+        "triggerId": "4",
+        "name": "CTM Call Answer",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "ctm.call.answer"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1234567890"
+      },
+      {
+        "accountId": "6247372366",
+        "containerId": "194137702",
+        "triggerId": "5",
+        "name": "CTM Call 15 Seconds",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "ctm.call.duration"
+              }
+            ]
+          }
+        ],
+        "filter": [
+          {
+            "type": "GREATER_THAN_EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{Duration}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "15"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1234567890"
+      },
+      {
+        "accountId": "6247372366",
+        "containerId": "194137702",
+        "triggerId": "6",
+        "name": "CTM Call 40 Seconds",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "ctm.call.duration"
+              }
+            ]
+          }
+        ],
+        "filter": [
+          {
+            "type": "GREATER_THAN_EQUALS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{Duration}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "40"
+              }
+            ]
+          }
+        ],
+        "fingerprint": "1234567890"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "6247372366",
+        "containerId": "194137702",
+        "variableId": "1",
+        "name": "URL Parameter - kkclid",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "queryKey",
+            "value": "kkclid"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "defaultValue",
+            "value": ""
+          }
+        ],
+        "fingerprint": "1234567890"
+      }
+    ],
+    "fingerprint": "1234567890",
+    "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6247372366/containers/194137702/versions/0?apiLink=version"
+  }
+}
