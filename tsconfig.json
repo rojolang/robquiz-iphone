@@ -32,7 +32,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "v3quiz/types/**/*.ts"
+    "v3quiz/types/**/*.ts",
+    "babymoney/types/**/*.ts",
+    "out/types/**/*.ts",
+    "global.d.ts"  // Ensure this is included
   ],
   "exclude": [
     "node_modules"

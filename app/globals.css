@@ -58,6 +58,10 @@
     --chart-5: 340 75% 55%;
   }
 }
+.button-class {
+  position: relative;
+  z-index: 10;
+}
 
 @layer base {
   html, body {
