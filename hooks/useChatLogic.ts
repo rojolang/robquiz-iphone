@@ -1,6 +1,5 @@
-// hooks/useChatLogic.ts
-
 import { useState, useEffect, useCallback } from 'react';
+import { useKowboyKit } from './useKowboyKit';
 
 interface Message {
     text: string;
@@ -20,6 +19,7 @@ export function useChatLogic(initialSteps: ChatStep[]) {
     const [showEngagingButtons, setShowEngagingButtons] = useState(false);
     const [showCallToAction, setShowCallToAction] = useState(false);
     const [timeLeft, setTimeLeft] = useState(300);
+    const { trackEvent } = useKowboyKit();
 
     const addBotMessage = useCallback((text: string) => {
         setMessages((prev) => [...prev, { text, sender: 'bot' }]);
@@ -42,7 +42,6 @@ export function useChatLogic(initialSteps: ChatStep[]) {
                     setTimeout(() => setCurrentStep((prev) => prev + 1), delay);
                 }
 
-                // Check for "Congratulations" message and set showCallToAction
                 if (currentMessage.message.includes("Congratulations")) {
                     setShowCallToAction(true);
                 }
@@ -66,14 +65,25 @@ export function useChatLogic(initialSteps: ChatStep[]) {
         return () => clearInterval(timer);
     }, [showCallToAction, timeLeft]);
 
-    const handleResponse = (response: string) => {
+    const handleResponse = useCallback((response: string) => {
         setShowButtons(false);
         setShowEngagingButtons(false);
         setMessages((prev) => [...prev, { text: response, sender: 'user' }]);
         if (currentStep < initialSteps.length - 1) {
             setCurrentStep((prev) => prev + 1);
         }
-    };
+
+        // Track KowboyKit events
+        if (currentStep === 2) {
+            trackEvent({ eventType: 'lead' });
+        } else if (currentStep === 3) {
+            trackEvent({ eventType: 'add_to_cart' });
+        } else if (currentStep === 4) {
+            trackEvent({ eventType: 'purchase', price: 18 });
+        } else if (currentStep === 5) {
+            trackEvent({ eventType: 'purchase', price: 60 });
+        }
+    }, [currentStep, initialSteps.length, trackEvent]);
 
     return {
         messages,

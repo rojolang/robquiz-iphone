@@ -1,5 +1,3 @@
-// components/AndroidChat.tsx
-
 import React, { useEffect, useCallback, ErrorInfo } from 'react';
 import { motion } from 'framer-motion';
 import { useChatLogic } from '../hooks/useChatLogic';
@@ -7,6 +5,7 @@ import { useAudioPlayback } from '../hooks/useAudioPlayback';
 import ChatHeader from './ChatHeader';
 import ChatBody from './ChatBody';
 import ChatFooter from './ChatFooter';
+import { useKowboyKit } from '../hooks/useKowboyKit';
 
 const audioFiles = ['/0.mp3', '/1.mp3', '/2.mp3', '/3.mp3'];
 
@@ -109,6 +108,7 @@ function AndroidChatContent({ globalSettings, phoneNumber, isFirstResponse, setI
     } = useChatLogic(globalSettings?.messagingSteps || []);
 
     const { initializeAudio, playInitialAudios, playNextAudio } = useAudioPlayback(audioFiles);
+    const { trackEvent } = useKowboyKit();
 
     useEffect(() => {
         initializeAudio();
@@ -120,10 +120,11 @@ function AndroidChatContent({ globalSettings, phoneNumber, isFirstResponse, setI
         if (isFirstResponse) {
             playInitialAudios();
             setIsFirstResponse(false);
+            trackEvent({ eventType: 'lead' });
         } else {
             playNextAudio();
         }
-    }, [handleResponse, playInitialAudios, playNextAudio, isFirstResponse, setIsFirstResponse]);
+    }, [handleResponse, playInitialAudios, playNextAudio, isFirstResponse, setIsFirstResponse, trackEvent]);
 
     return (
         <motion.div className="w-[375px] h-[812px] overflow-hidden shadow-lg bg-white flex flex-col rounded-3xl border-8 border-gray-800">

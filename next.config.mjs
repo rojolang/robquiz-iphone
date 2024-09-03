@@ -1,5 +1,3 @@
-// next.config.mjs
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
@@ -8,6 +6,14 @@ const nextConfig = {
     trailingSlash: true,
     images: {
         unoptimized: true,
+    },
+    async rewrites() {
+        return [
+            {
+                source: '/api/:path*',
+                destination: 'http://your-php-backend.com/:path*', // Replace with your actual PHP backend URL
+            },
+        ];
     },
     webpack: (config, { isServer, dev }) => {
         if (!isServer && !dev) {
