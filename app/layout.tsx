@@ -1,5 +1,3 @@
-// app/layout.tsx
-
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
@@ -22,14 +20,14 @@ const globalSettings = {
     messagingSteps: [
         { message: "Hi 👋", waitForInput: false },
         { message: "I'm Emily from Senior Benefits Direct.", waitForInput: false },
-        { message: "Want to find out if you qualify for a $3,300 Health Allowance Benefit? Tap Yes! 😃", waitForInput: true },
+        { message: "Want to find out if you qualify for a $3,300 Health Allowance Benefit? Tap Yes 😃", waitForInput: true },
         { message: "Are you under the age of 64?", waitForInput: true },
         { message: "Are you on Medicare Part A and Part B?", waitForInput: true },
-        { message: "🎉 Congratulations! 🎊", waitForInput: false },
+        { message: "🎉 Congratulations 🎊", waitForInput: false },
         { message: "You're pre-qualified for a $3,300 Health Allowance!", waitForInput: false },
         { message: "You can use the savings for your grocery, rent, medical expenses, and so on.", waitForInput: false },
         { message: "Tap the number button below to call now to get your $3,300", waitForInput: false },
-        { message: "Hurry up! I only have 5 minutes until my next customer. Call now to secure your benefit!", waitForInput: false }
+        { message: "Hurry up I only have 5 minutes until my next customer. Call now to secure your benefit!", waitForInput: false }
     ],
     initialCountdown: 300,
     agentAvatarUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/main-qimg-fe14c462c2025fcfe5a696fc2a64b2bb-3BNBEfS49IhI5iFTOjTLo5bcnT7nUv.webp",
@@ -59,9 +57,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         (function(w,d,s,l,i){
                             w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
                             var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-                            j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+window.globalSettings.gtmId+dl;
-                            f.parentNode.insertBefore(j,f);
-                        })(window,document,'script','dataLayer', window.globalSettings.gtmId);
+                            j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                        })(window,document,'script','dataLayer','${globalSettings.gtmId}');
                     }
                 `}
             </Script>
@@ -79,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                             t.src=v; s=b.getElementsByTagName(e)[0];
                             s.parentNode.insertBefore(t,s)
                         }(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
-                        fbq('init', window.globalSettings.fbPixelId);
+                        fbq('init', '${globalSettings.fbPixelId}');
                         fbq('track', 'PageView');
                     }
                 `}

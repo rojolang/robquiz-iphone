@@ -4,7 +4,7 @@
 const nextConfig = {
     output: 'export',
     distDir: 'out',
-    assetPrefix: '/babymoney',
+    assetPrefix: '/',
     trailingSlash: true,
     images: {
         unoptimized: true,
